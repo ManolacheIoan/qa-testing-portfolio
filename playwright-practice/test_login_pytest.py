@@ -17,6 +17,46 @@ class LoginPage:
         self.page.click("button[type='submit']")
 
 
+class CheckboxesPage:
+
+    def __init__(self, page: Page):
+        self.page = page
+
+    def goto(self):
+        self.page.goto("https://the-internet.herokuapp.com/checkboxes")
+
+    def check_first(self):
+        self.page.locator("input[type='checkbox']").first.click()
+
+def test_check_first_checkbox(page: Page):
+    checkboxes_page = CheckboxesPage(page)
+    checkboxes_page.goto()
+    checkboxes_page.check_first()
+
+    assert checkboxes_page.page.locator("input[type='checkbox']").first.is_checked()
+
+
+class DropdownPage:
+
+    def __init__(self, page: Page):
+        self.page = page
+
+    def goto(self):
+        self.page.goto("https://the-internet.herokuapp.com/dropdown") 
+
+    def select_option_1(self):
+        self.page.select_option("#dropdown", "1") 
+
+
+def test_select_dropdown_option(page: Page):
+    dropdown_page = DropdownPage(page)
+    dropdown_page.goto()
+    dropdown_page.select_option_1()
+
+    assert dropdown_page.page.locator("#dropdown").input_value() == "1"
+
+
+
 class SecureAreaPage:
     """Page Object pentru pagina afișată după login reușit."""
 
