@@ -33,4 +33,4 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Run tests
-        run: pytest playwright-practice/test_login_pytest.py -v
+        run: pytest playwright-practice/test_saucedemo_pytest.py -v
