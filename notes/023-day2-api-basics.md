@@ -22,3 +22,9 @@
 
 ## Lesson
 - A test that never failed does not prove it can catch a bug. Check that the test can fail.
+
+## SQL basics (sql/day2-sql-basics.sql)
+- Tables, rows, primary key, foreign key. SELECT, FROM, WHERE, ORDER BY.
+- JOIN keeps only rows with a match. LEFT JOIN + WHERE ... IS NULL finds orphan records.
+- Found an orphan order (user_id 99 does not exist in users): a data integrity defect to report, not to delete.
+- COUNT, SUM and GROUP BY give totals per group.
