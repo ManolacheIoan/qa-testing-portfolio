@@ -1,0 +1,5 @@
+INFO start
+INFO user logged in
+ERROR payment failed
+WARN slow response
+ERROR timeout
