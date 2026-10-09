@@ -1,0 +1,2 @@
+ERROR payment failed
+ERROR timeout
