@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 c-practice/basics
+.pytest_cache/
+.venv/
