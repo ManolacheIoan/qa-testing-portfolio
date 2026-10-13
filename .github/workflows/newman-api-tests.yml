@@ -1,0 +1,19 @@
+name: Newman API tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Newman
+        run: npm install -g newman
+      - name: Run Postman collection
+        run: newman run postman-collections/reqres-demo-collection.json --env-var "base_url=https://reqres.in"
